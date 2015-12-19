@@ -357,6 +357,20 @@ input.search-form:hover {
   padding-bottom: 0;
 }
 
+#banner {
+  height: 300px;
+  background: #000 url(../images/whoIam/bnr1.jpg);
+  background-size:cover;
+}
+
+#banner .center {
+  text-align: center;
+}
+
+#banner h1 {
+    font-weight:600;
+    font-size: 70px;
+}
 
 /*************************
 *******Home Page******
