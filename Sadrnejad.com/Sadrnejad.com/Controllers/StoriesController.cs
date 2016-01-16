@@ -17,8 +17,15 @@ namespace Sadrnejad.com.Controllers
         // GET: Stories
         public ActionResult Index()
         {
-            var posts = db.Posts.Include(p => p.Categories);
-            return View(posts.ToList());
+            var posts = db.Posts.ToList();
+            return View(posts);
+        }
+
+        // GET: Stories/PartialViewCategories
+        public ActionResult PartialViewCategories()
+        {
+            List<Category> categories = db.Categories.ToList();
+            return PartialView("_Category", categories);
         }
 
         // GET: Stories/Details/5
@@ -37,6 +44,7 @@ namespace Sadrnejad.com.Controllers
         }
 
         // GET: Stories/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             ViewBag.Category_ID = new SelectList(db.Categories, "ID", "Title");

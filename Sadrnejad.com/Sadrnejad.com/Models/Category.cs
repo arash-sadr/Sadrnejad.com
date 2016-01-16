@@ -20,5 +20,6 @@ namespace Sadrnejad.com.Models
         public bool Enabled { get; set; }
         public string UrlSlug { get; set; }
 
+        public virtual IList<Post> Posts { get; set; }
     }
 }

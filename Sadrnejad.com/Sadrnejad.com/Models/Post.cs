@@ -36,6 +36,7 @@ namespace Sadrnejad.com.Models
         public DateTime? Modified { get; set; }
 
         [ForeignKey("Categories")]
+        [Display(Name = "Category")]
         public int Category_ID { get; set; }
         public virtual Category Categories { get; set; }
 
