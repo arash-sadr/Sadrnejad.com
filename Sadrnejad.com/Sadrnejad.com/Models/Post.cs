@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace Sadrnejad.com.Models
 {
@@ -18,10 +19,9 @@ namespace Sadrnejad.com.Models
         [StringLength(1000)]
         public string ShortDescription { get; set; }
 
-        [Display(Name = "Body")]
+        [UIHint("tinymce_jquery_full"), AllowHtml, Display(Name = "Body")]
         public string Article { get; set; }
         public string Meta { get; set; }
-
         public string UrlSlug { get; set; }
 
         [Display(Name = "Publish it")]

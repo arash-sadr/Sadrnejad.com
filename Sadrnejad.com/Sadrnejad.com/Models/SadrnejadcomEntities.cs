@@ -9,7 +9,7 @@ namespace Sadrnejad.com.Models
         public SadrnejadcomEntities() 
         : base("SadrnejadcomEntities")
         {
-            Database.SetInitializer<SadrnejadcomEntities>(new SadrnejadcomDBInitializer());
+            //Database.SetInitializer<SadrnejadcomEntities>(new SadrnejadcomDBInitializer());
 
             //Database.SetInitializer<SchoolDBContext>(new CreateDatabaseIfNotExists<SchoolDBContext>());
 

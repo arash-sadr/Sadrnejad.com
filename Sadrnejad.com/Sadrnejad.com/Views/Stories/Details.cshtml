@@ -1,94 +1,91 @@
-﻿@model Sadrnejad.com.Models.Post
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Post</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Categories.Title)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Categories.Title)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.ShortDescription)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ShortDescription)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Article)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Article)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Meta)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Meta)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.UrlSlug)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.UrlSlug)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Published)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Published)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.PostedOn)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.PostedOn)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Modified)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Modified)
-            </dd>
-    
-        </dl>
+﻿@using HtmlAgilityPack;
+@model Sadrnejad.com.Models.Post
+<section id="banner">
+    <div class="container">
+        <div class="center">
+            <h1>Blogs</h1>
+        </div>
     </div>
+</section><!--/banner-->
+<section id="blog" class="container">
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @if (Roles.IsUserInRole("Admin"))
+        {
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        </p>
+        }
         @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+        </p>
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        @{
+                            HtmlDocument articleHtml = new HtmlDocument();
+                            articleHtml.LoadHtml(Model.Article);
+                            var imgHtmlNodes = articleHtml.DocumentNode.SelectNodes("//img");
+                            if (imgHtmlNodes != null)
+                            {
+                                foreach (HtmlNode element in imgHtmlNodes)
+                                {
+                                    <img class="img-responsive img-blog" src=@Url.Content(element.GetAttributeValue("src", " ")) width="100%" alt="" />
+                                }
+                            }
+                        }
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="category_Title">Category</span>
+                                    <span><i class="fa fa-comment"></i> @Html.DisplayFor(modelItem => Model.Categories.Title)</a></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <h2>@Html.DisplayFor(model => model.Title)</h2>
+                                <h3>@Html.DisplayFor(model => model.ShortDescription)</h3>
+                                <p>@Html.Raw(Html.DisplayFor(model => model.Article))</p>
+                                <div class="post-tags">
+                                    <strong>Tag:</strong> <a href="#">Cool</a> / <a href="#">Creative</a> / <a href="#">Dubttstep</a>
+                                </div>
+                                <div>
+                                    @Html.DisplayNameFor(model => model.Published)
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.Published)
+                                </div>
+                                <div>
+                                    @Html.DisplayNameFor(model => model.PostedOn)
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.PostedOn)
+                                </div>
+                                <div>
+                                    @Html.DisplayNameFor(model => model.Modified)
+                                </div>
+                                <div>
+                                    @Html.DisplayFor(model => model.Modified)
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.blog-item-->
+                </div><!--/.col-md-8-->
+                <aside class="col-md-4">
+                    <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div><!--/.tags-->
+                </aside>
+            </div><!--/.row-->
+        </div><!--/.blog-->
+    </section><!--/#blog-->

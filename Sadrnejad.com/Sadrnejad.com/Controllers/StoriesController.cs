@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Sadrnejad.com.Models;
 
@@ -19,6 +16,12 @@ namespace Sadrnejad.com.Controllers
         {
             var posts = db.Posts.ToList();
             return View(posts);
+        }
+
+        public ActionResult CategoryIndex(int? categoryID)
+        {
+            var posts = db.Posts.Where(x => x.Categories.ID == categoryID).ToList();
+            return View("Index",posts);
         }
 
         // GET: Stories/PartialViewCategories
@@ -44,7 +47,7 @@ namespace Sadrnejad.com.Controllers
         }
 
         // GET: Stories/Create
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.Category_ID = new SelectList(db.Categories, "ID", "Title");

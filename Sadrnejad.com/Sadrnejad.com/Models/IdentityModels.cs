@@ -21,13 +21,40 @@ namespace Sadrnejad.com.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("SadrnejadcomMembership", throwIfV1Schema: false)
         {
+            Database.SetInitializer<ApplicationDbContext>(new ApplicationDBInitializer());
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        public class ApplicationDBInitializer: DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+        {
+            protected override void Seed(ApplicationDbContext context)
+            {
+                string roleName = "Admin";
+                string userEmail = "arash.sdr@gmail.com";
+                string password = "Arash123$%";
+
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var user = new ApplicationUser() { UserName= userEmail, Email=userEmail };
+
+                if (!roleManager.RoleExists(roleName))
+                {
+                    var roleResult = roleManager.Create(new IdentityRole(roleName));
+                }
+
+                if (userManager.FindByName(userEmail) == null)
+                {
+                    var userResult = userManager.Create(user, password);
+                    var assignRoleResult = userManager.AddToRole(user.Id, roleName);
+                }
+                base.Seed(context);
+            }
         }
     }
 }
