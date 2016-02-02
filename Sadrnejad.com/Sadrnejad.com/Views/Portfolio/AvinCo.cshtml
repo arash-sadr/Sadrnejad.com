@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "AvinCo";
+}
+<section id="BackToMainPage" class="container text-center">
+    <a class="btn btn-primary" href=@Url.Content("~/Portfolio")>   Main Page   </a>
+</section><!--/BackToMainPage-->
+<br />
+<br />
+<section id="PortfolioItem" class="container">
+    <div class="center">
+        <h2>@ViewBag.Title</h2>
+        <p class="lead">ASP.NET Software developer/tester </p>
+        <h3>Developing of business components, Testing of UI products</h3>
+    </div>
+    <div class="blog">
+        <div class="row">
+            <aside class="col-md-2"></aside>
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <img class="img-responsive img-blog" src=@Url.Content("~/Content/themes/corlate/images/Portfolio/full/AvinCo.png") width="100%" alt="" />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center">
+                            <div class="entry-meta">
+                                <span id="publish_date">1 Year</span>
+                                <span><i class="fa"></i> Software Developer </span>
+                                <span><i class="fa"></i> Key person in Testing UI</span>
+                                <span><i class="fa"></i> 6 CMSs </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-10 blog-content">
+                            <h2>A need for a sharp eye on all website products</h2>
+                            <p>After starting as beginner in company, my duty was serving CMS projects requirements targeting specific customers including communities, charities, departments in Karaj – a big city in Iran.</p>
+                            <p>End-user where admins of the websites and eventually citizens. The admins were not knowledgeable in IT fields (Mostly self-funded organization or NGOs).</p>
+                            <p>I helped to design easy UI controls and scenarios and at the end tested them by end-user needs.</p>
+                            <div class="post-tags">
+                                <strong>Tag:</strong> <a href="#">Creativity</a> / <a href="#">Inspiration</a> / <a href="#">Software quality</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
+            <aside class="col-md-2">
+                <div class="widget blog_gallery">
+                    <h3>Gallery</h3>
+                    <ul class="sidebar-gallery">
+                        <li>
+                            <a class="preview" href=@Url.Content("~/Content/themes/corlate/images/blog/gallery1.png") rel="prettyPhoto">
+                                <img src=@Url.Content("~/Content/themes/corlate/images/blog/gallery1.png") alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="preview" href=@Url.Content("~/Content/themes/corlate/images/blog/gallery2.png") rel="prettyPhoto">
+                                <img src=@Url.Content("~/Content/themes/corlate/images/blog/gallery2.png") alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="preview" href=@Url.Content("~/Content/themes/corlate/images/blog/gallery3.png") rel="prettyPhoto">
+                                <img src=@Url.Content("~/Content/themes/corlate/images/blog/gallery3.png") alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="preview" href=@Url.Content("~/Content/themes/corlate/images/blog/gallery4.png") rel="prettyPhoto">
+                                <img src=@Url.Content("~/Content/themes/corlate/images/blog/gallery4.png") alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="preview" href=@Url.Content("~/Content/themes/corlate/images/blog/gallery5.png") rel="prettyPhoto">
+                                <img src=@Url.Content("~/Content/themes/corlate/images/blog/gallery5.png") alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.blog_gallery-->
+            </aside>
+        </div><!--/.row-->
+    </div><!--/.blog-->
+</section><!--/#blog-->

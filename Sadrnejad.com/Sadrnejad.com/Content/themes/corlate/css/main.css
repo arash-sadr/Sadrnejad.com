@@ -357,9 +357,37 @@ input.search-form:hover {
   padding-bottom: 0;
 }
 
-#banner {
-  height: 300px;
+section#banner {
+  height: 250px;
+}
+
+section#banner.whoiam {
   background: #000 url(../images/whoIam/bnr1.jpg);
+  background-size:cover;
+}
+
+section#banner.curriculumVitae {
+  background: #000 url(../images/CurriculumVitae/bnr1.jpg);
+  background-size:cover;
+}
+
+section#banner.portfolio {
+  background: #000 url(../images/Portfolio/bnr1.jpg);
+  background-size:cover;
+}
+
+section#banner.stories {
+  background: #000 url(../images/Stories/bnr1.jpg);
+  background-size:cover;
+}
+
+section#banner.somepictures {
+  background: #000 url(../images/SomePictures/bnr1.jpg);
+  background-size:cover;
+}
+
+section#banner .mycontact {
+  background: #000 url(../images/MyContact/bnr1.jpg);
   background-size:cover;
 }
 
@@ -370,6 +398,13 @@ input.search-form:hover {
 #banner h1 {
     font-weight:600;
     font-size: 70px;
+}
+
+#banner h3 {
+    font-weight: 100;
+    font-size: 25px;
+    font-style:italic;
+    color: lightgray;
 }
 
 /*************************
@@ -2176,7 +2211,7 @@ ul.faq li > div h3 {
   text-align: left;
 }
 
-#publish_date {
+#category_Title {
   background: #c52d2f;
   border-bottom: 5px solid #4e4e4e;
   color: #fff;
