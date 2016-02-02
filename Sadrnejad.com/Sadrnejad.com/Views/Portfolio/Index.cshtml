@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Portfolio";
+}
+<section id="banner" class="portfolio">
+    <div class="container">
+        <div class="center">
+            <h3>Take a moment to look at my</h3>
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</section><!--/banner-->
+<br />
+<br />
+<br />
+<div class="center wow fadeInDown">
+    <h2>Software Projects & Expreinces </h2>
+    <p class="lead">Selection of highliners through years of career.. Inovations, Accomplishments, Results</p>
+</div>
+<br />
+<section id="blog" class="container wow fadeInDown">
+    <section id="portfolio">
+        <div class="container">
+
+            <div class="row">
+                <div class="portfolio-items">
+                    <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
+                        <div class="recent-work-wrap">
+                            <img class="img-responsive" src=@Url.Content("Content/themes/corlate/images/portfolio/recent/AvinCo.png") alt="">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <h3>@Html.ActionLink("AvinCo", "Details", new { Title = "AvinCo" })</h3>
+                                    <p>Start point of software journey as software developer, tester. Working on ASP.net modules.. </p>
+                                    <i class="fa fa-eye"></i> @Html.ActionLink("View", "Details", new { Title = "AvinCo" }, new { @class = "preview" })
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.portfolio-item-->
+                </div>
+            </div>
+        </div>
+    </section><!--/#portfolio-item-->
+</section><!--/#blog-->
