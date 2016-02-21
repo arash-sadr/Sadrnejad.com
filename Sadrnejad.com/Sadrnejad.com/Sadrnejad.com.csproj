@@ -425,6 +425,7 @@
     <Content Include="Content\themes\corlate\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\themes\corlate\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\themes\corlate\images\404.xcf" />
+    <Content Include="Content\Resources\CurriculumVitae\ArashCV31082015.pdf" />
     <None Include="Properties\PublishProfiles\Sadrnejad.com.Publish1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
