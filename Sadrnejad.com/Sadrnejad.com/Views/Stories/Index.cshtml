@@ -1,12 +1,20 @@
 ﻿@using HtmlAgilityPack;
 @model IEnumerable<Sadrnejad.com.Models.Post>
-<section id="banner">
+@{
+    ViewBag.Title = "Stories";
+}
+
+<section id="banner" class="stories">
     <div class="container">
         <div class="center">
-            <h1>Blogs</h1>
+            <br />
+            <br/>
+            <h1>@ViewBag.Title</h1>
         </div>
     </div>
 </section><!--/banner-->
+<br/>
+<br/>
 <section id="blog" class="container">
     @if (Roles.IsUserInRole("Admin"))
     {
@@ -35,15 +43,17 @@
                                     var imgHtmlNodes = articleHtml.DocumentNode.SelectNodes("//img");
                                     if (imgHtmlNodes != null)
                                     {
-                                        foreach (HtmlNode element in imgHtmlNodes)
-                                        {
-                                            <a href="#"><img class="img-responsive img-blog" src=@Url.Content(element.GetAttributeValue("src", " ")) width="100%" alt="" /></a>
-                                        }
+                                        <img class="img-responsive img-blog" src=@Url.Content(imgHtmlNodes[0].GetAttributeValue("src", " ")) width="100%" alt="" />
+
+                                        @*foreach (HtmlNode element in imgHtmlNodes)
+                                            {
+                                                <img class="img-responsive img-blog" src=@Url.Content(element.GetAttributeValue("src", " ")) width="100%" alt="" />
+                                            }*@
                                     }
                                 }
                                 <h2>@Html.ActionLink(@Html.DisplayFor(modelItem => item.Title).ToString(), "Details", new { id = item.ID })</h2>
                                 <h3>@Html.DisplayFor(modelItem => item.ShortDescription)</h3>
-                                <a class="btn btn-primary readmore">@Html.ActionLink("Read More..", "Details", new { id = item.ID })<i class="fa fa-angle-right"></i></a>
+                                <h4>@Html.ActionLink("Read More..", "Details", new { id = item.ID })</h4>
                             </div>
                         </div>
                                     }

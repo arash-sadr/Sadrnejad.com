@@ -1,22 +1,30 @@
 ﻿@model IEnumerable<Sadrnejad.com.Models.Category>
 
+@if (Roles.IsUserInRole("Admin"))
+{
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Title, "CategoryIndex", new { categoryID = item.ID })
-                </td>
-                <td>
-                    @Html.ActionLink("Edit","Edit","Categories", new { id = item.ID },null)
-                    @Html.ActionLink("Details", "Details", new { id = item.ID })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
-        }
+}
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Title, "CategoryIndex", new { categoryID = item.ID })
+            </td>
+            <td>
+                @if (Roles.IsUserInRole("Admin"))
+                {
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", "Categories", new { id = item.ID }, null) |
+                        @Html.ActionLink("Details", "Details", "Categories", new { id = item.ID }, null) |
+                        @Html.ActionLink("Delete", "Delete", "Categories", new { id = item.ID }, null)
+                    </p>
+                }
+            </td>
+        </tr>
+    }
 
-    </table>
+</table>
 

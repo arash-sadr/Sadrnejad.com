@@ -20,6 +20,11 @@ namespace Sadrnejad.com.Controllers
             return View();
         }
 
+        public ActionResult CurriculumVitae()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

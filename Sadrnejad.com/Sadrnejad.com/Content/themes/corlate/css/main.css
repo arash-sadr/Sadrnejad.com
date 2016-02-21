@@ -10,6 +10,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   color:#4e4e4e;
   line-height: 22px;
+  margin-bottom: 60px;
+}
+
+html {
+    position: relative; 
+    min-height: 100%;
 }
 
 h1,
@@ -169,6 +175,9 @@ body > section {
   }
 }
 
+.img-figure{
+    margin: 0 auto;
+}
 
 /*************************
 *******Header******
@@ -275,8 +284,8 @@ input.search-form:hover {
  }
 
 .navbar-nav>li{
-  margin-left: 35px;
-  padding-bottom: 28px;
+  margin-left: 25px;
+  padding-bottom: 20px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -366,7 +375,7 @@ section#banner.whoiam {
   background-size:cover;
 }
 
-section#banner.curriculumVitae {
+section#banner.curriculumvitae {
   background: #000 url(../images/CurriculumVitae/bnr1.jpg);
   background-size:cover;
 }
@@ -382,12 +391,12 @@ section#banner.stories {
 }
 
 section#banner.somepictures {
-  background: #000 url(../images/SomePictures/bnr1.jpg);
+  background: #000 url(../images/SomePictures/bnr1.jpg) center;
   background-size:cover;
 }
 
-section#banner .mycontact {
-  background: #000 url(../images/MyContact/bnr1.jpg);
+section#banner.mycontact {
+  background: #000 url(../images/MyContact/bnr1.jpg) top;
   background-size:cover;
 }
 
@@ -398,6 +407,11 @@ section#banner .mycontact {
 #banner h1 {
     font-weight:600;
     font-size: 70px;
+}
+
+#blogbanner h1 {
+    font-weight:450;
+    font-size: 55px;
 }
 
 #banner h3 {
@@ -422,7 +436,8 @@ section#banner .mycontact {
 }
 
 #main-slider .carousel .carousel-content {
-  margin-top: 150px;
+  margin-top: 230px;
+  margin-left: 230px;
 }
 
 #main-slider .carousel .slide-margin{
@@ -458,7 +473,7 @@ section#banner .mycontact {
   position: absolute;
   width: 100%;
   display: block !important;
-  height: 730px;
+  height: 800px;
   -webkit-transition: opacity ease-in-out 500ms;
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
@@ -2553,6 +2568,10 @@ shortcodes page css
   padding-bottom: 30px;
   color: #fff;
   background: #2e2e2e;
+  position:absolute; 
+  bottom:0; 
+  right:0; 
+  left:0;
 }
 
 #footer a {
@@ -2573,9 +2592,5 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
-
-
-
-
 
 

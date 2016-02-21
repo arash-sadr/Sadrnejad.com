@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\SomePicturesController.cs" />
     <Compile Include="Controllers\StoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -386,6 +387,7 @@
     <Content Include="Content\themes\corlate\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\themes\corlate\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\themes\corlate\images\404.xcf" />
+    <None Include="Properties\PublishProfiles\Sadrnejad.com.Publish1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -702,11 +704,12 @@
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Portfolio\AvinCo.cshtml" />
+    <Content Include="Views\SomePictures\Index.cshtml" />
+    <Content Include="Views\Home\CurriculumVitae.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\corlate\__MACOSX\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

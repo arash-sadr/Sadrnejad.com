@@ -8,7 +8,7 @@
     @*@Scripts.Render("~/bundles/modernizr")*@
 
     <!-- core CSS -->
-    <link href="@Url.Content("~/Content/themes/corlate/css/font-awesome.min.css")" rel="stylesheet"/>
+    <link href="@Url.Content("~/Content/themes/corlate/css/font-awesome.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/themes/corlate/css/bootstrap.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/themes/corlate/css/animate.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/themes/corlate/css/prettyPhoto.css")" rel="stylesheet" />
@@ -18,11 +18,11 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-144-precomposed.png")"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-114-precomposed.png")"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-72-precomposed.png")"/>
-    <link rel="apple-touch-icon-precomposed" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-57-precomposed.png")"/>
+    <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-144-precomposed.png")" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-114-precomposed.png")" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-72-precomposed.png")" />
+    <link rel="apple-touch-icon-precomposed" href="@Url.Content("~/Content/themes/corlate/images/ico/apple-touch-icon-57-precomposed.png")" />
 
     <script src="@Url.Content("~/Content/themes/corlate/js/jquery.js")"></script>
     <script src="@Url.Content("~/Content/themes/corlate/js/bootstrap.min.js")"></script>
@@ -43,19 +43,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button> 
+                    </button>
                     <a class="navbar-brand" href="@Url.Content("~")"><img src="@Url.Content("~/Content/themes/corlate/images/logo.png")" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Who I am", "About", "Home")</li>
-                        <li>@Html.ActionLink("Curriculum Vitae", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Curriculum Vitae", "CurriculumVitae", "Home")</li>
                         <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
                         <li>@Html.ActionLink("Stories", "Index", "Stories")</li>
-                        <li>@Html.ActionLink("Some Pictures", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Some Pictures", "Index", "SomePictures")</li>
                         <li class="active">@Html.ActionLink("My Contact", "Contact", "Home")</li>
                         <li>@Html.Partial("_LoginPartial")</li>
-                    </ul>                   
+                    </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
