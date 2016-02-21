@@ -271,6 +271,8 @@
     <Content Include="Content\themes\corlate\images\partners\partner4.png" />
     <Content Include="Content\themes\corlate\images\partners\partner5.png" />
     <Content Include="Content\themes\corlate\images\partners\partner_bg.png" />
+    <Content Include="Content\themes\corlate\images\portfolio\bnr1.jpg" />
+    <Content Include="Content\themes\corlate\images\portfolio\full\AvinCo.png" />
     <Content Include="Content\themes\corlate\images\portfolio\full\item1.png" />
     <Content Include="Content\themes\corlate\images\portfolio\full\item10.png" />
     <Content Include="Content\themes\corlate\images\portfolio\full\item11.png" />
@@ -283,6 +285,7 @@
     <Content Include="Content\themes\corlate\images\portfolio\full\item7.png" />
     <Content Include="Content\themes\corlate\images\portfolio\full\item8.png" />
     <Content Include="Content\themes\corlate\images\portfolio\full\item9.png" />
+    <Content Include="Content\themes\corlate\images\portfolio\recent\AvinCo.png" />
     <Content Include="Content\themes\corlate\images\portfolio\recent\item1.png" />
     <Content Include="Content\themes\corlate\images\portfolio\recent\item10.png" />
     <Content Include="Content\themes\corlate\images\portfolio\recent\item11.png" />
